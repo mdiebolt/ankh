@@ -6,7 +6,7 @@ main.h-screen.flex.flex-col.justify-between
         | Hotwire Rails
 
     - if @card.nil?
-      | All done!
+      .text-2xl.text-center All done! 🎉
     - else
       = turbo_frame_tag :card, src: deck_card_path(@deck, @card)
 

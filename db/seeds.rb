@@ -1,13 +1,23 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+pp "Seeding Ankh decks"
+
 Deck.create!(name: "Tailwind CSS")
 Deck.create!(name: "Ruby")
 Deck.create!(name: "Ruby on Rails")
-Deck.create!(name: "Hotwired Ruby on Rails")
+
+hotwire = Deck.create!(name: "Hotwired Ruby on Rails")
+
+hotwire.cards.create! \
+  front: "<div>Generate a random number between 0 and 1</div>",
+  back: "<pre>rand</pre>"
+
+hotwire.cards.create! \
+  front: "<div>Generate a random number between 1 and 10</div>",
+  back: "<pre>rand 10</pre>"
+
+hotwire.cards.create! \
+  front: "<div>Generate a random number between 5 and 8</div>",
+  back: "<pre>rand(5...8)</pre>"
+
+hotwire.cards.create! \
+  front: "<div>What’s the Tailwind CSS class to use to prevent button text from wrapping?</div>",
+  back: "<pre>whitespace-nowrap</pre>"

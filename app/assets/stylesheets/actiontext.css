@@ -43,3 +43,7 @@ trix-toolbar .trix-button.trix-active {
 trix-toolbar .trix-button-group {
   overflow: hidden;
 }
+
+.trix-content pre {
+  background: none;
+}
