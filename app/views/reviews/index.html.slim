@@ -4,10 +4,8 @@ main.h-screen.flex.flex-col.justify-between
       h1.text-5xl.font-black Review
 
     div
-      ul
-        li = link_to 'Deck 1', review_path(1), class: "underline"
-        li = link_to 'Deck 2', review_path(2), class: "underline"
-        li = link_to 'Deck 3', review_path(3), class: "underline"
-        li = link_to 'Deck 4', review_path(4), class: "underline"
+      ul.flex.flex-col.space-y-1
+        - @decks.each do |deck|
+          li = link_to deck.name, review_path(deck.id), class: "underline"
 
   = render "footer"

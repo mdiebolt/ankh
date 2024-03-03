@@ -7,3 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Deck.create!(name: "Tailwind CSS")
+Deck.create!(name: "Ruby")
+Deck.create!(name: "Ruby on Rails")
+Deck.create!(name: "Hotwired Ruby on Rails")

@@ -1,0 +1,24 @@
+main.h-screen.flex.flex-col.justify-between
+  .max-w-2xl.mx-auto
+    .p-12
+      h1.text-5xl.font-black.text-pretty
+        | New Deck
+
+    .h-64.mx-auto.bg-zinc-800.rounded-xl.px-6.py-4.text-pretty
+      = form_with model: @deck, class: "h-full flex flex-col justify-between" do |form|
+        div
+          p Create a new deck of flashcards
+
+          .mt-4
+            div
+              = form.label :name,
+                class: "text-zinc-300"
+            div
+              = form.text_field :name,
+                class: "w-full bg-zinc-700 border border-zinc-600",
+                autocomplete: "off"
+
+        div
+          = form.submit "Create", class: "w-full py-1 border border-zinc-600 rounded-full cursor-pointer hover:bg-zinc-600 active:bg-zinc-700"
+
+  = render "footer"

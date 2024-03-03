@@ -1,0 +1,13 @@
+main.h-screen.flex.flex-col.justify-between
+  .max-w-2xl.mx-auto
+    .p-12
+      .text-sm.text-zinc-300 Deck
+      h1.text-5xl.font-black.text-pretty
+        = @deck.name
+
+      .mt-24
+        | Cards: #{@deck.cards.size}
+
+      = link_to "Add Card", new_deck_card_path(@deck), class: "mt-4 underline"
+
+  = render "footer"
