@@ -211,6 +211,7 @@ GEM
       ffi (~> 1.0)
     rdoc (6.6.2)
       psych (>= 4.0.0)
+    redis (4.8.1)
     regexp_parser (2.9.0)
     reline (0.4.3)
       io-console (~> 0.5)
@@ -300,6 +301,7 @@ DEPENDENCIES
   puma
   rails!
   rails_live_reload
+  redis (~> 4.0)
   rubocop-rails-omakase
   selenium-webdriver
   slim

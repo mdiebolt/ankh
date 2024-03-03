@@ -1,0 +1,32 @@
+doctype html
+html lang="en"
+  head
+    title
+      = content_for(:title) || "Ankh. A beaufiful way to practice Anki flashcards."
+
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    meta name="apple-mobile-web-app-capable" content="yes"
+    meta name="theme-color" content="#18181b"
+    meta name="description" content="A beaufiful way to practice Anki flashcards."
+
+    meta name="view-transition" content="same-origin"
+    meta name="turbo-prefetch" content="true"
+
+    = turbo_refreshes_with method: :morph, scroll: :preserve
+
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = yield :head
+
+    link rel="manifest" href="/manifest.json"
+    link rel="icon" href="/icon.png" type="image/png"
+    link rel="icon" href="/icon.svg" type="image/svg+xml"
+    link rel="apple-touch-icon" href="/icon.png"
+
+    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+
+    = javascript_importmap_tags
+  body.min-h-screen.bg-zinc-900.text-white
+    = yield
