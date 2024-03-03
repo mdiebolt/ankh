@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :decks, only: %i[new create show] do
     resources :cards, only: %i[new create show update]
-    resources :backs, only: [:show]
+    resources :backs, only: [ :show ]
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
