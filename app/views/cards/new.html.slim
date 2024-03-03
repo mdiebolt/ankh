@@ -1,5 +1,5 @@
 main.h-screen.flex.flex-col.justify-between
-  .max-w-2xl.mx-auto
+  .max-w-3xl.mx-auto
     .p-12
       .text-sm.text-zinc-300 Add card to
       h1.text-5xl.font-black.text-pretty
@@ -8,17 +8,12 @@ main.h-screen.flex.flex-col.justify-between
     .mx-auto.bg-zinc-800.rounded-xl.px-6.py-4.text-pretty
       = form_with model: [@deck, @card], class: "h-full flex flex-col justify-between" do |form|
         div
-          p Add a new card to #{@deck.name}
-
-        div
           = form.label :front
           = form.rich_text_area :front
 
-        div
+        .mt-4
           = form.label :back
           = form.rich_text_area :back
 
-        div
-          = form.submit "Create", class: "w-full py-1 border border-zinc-600 rounded-full cursor-pointer hover:bg-zinc-600 active:bg-zinc-700"
-
-  = render "footer"
+        .mt-8
+          = form.submit "Create", class: "w-32 py-1 border border-zinc-600 rounded-full cursor-pointer hover:bg-zinc-600 active:bg-zinc-700"

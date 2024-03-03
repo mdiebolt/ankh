@@ -5,5 +5,6 @@ class ReviewsController < ApplicationController
 
   def show
     @deck = Deck.find(params[:id])
+    @card = @deck.cards.reviewable.first
   end
 end

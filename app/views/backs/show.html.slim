@@ -1,0 +1,21 @@
+= turbo_frame_tag :card do
+  .mt-2.w-48.h-64.mx-auto.bg-zinc-800.rounded-xl.px-6.py-4.text-pretty
+    .flex.flex-col.justify-between.h-full
+      div
+        .mt-4
+          = @card.back
+
+  .flex.justify-around.mt-4
+    / = link_to "Again", "#",
+    /   class: "block py-1 px-4 text-center border border-zinc-600 rounded-full"
+
+    / = link_to "Hard", "#",
+    /   class: "block py-1 px-4 text-center border border-zinc-600 rounded-full"
+
+    / = link_to "Good", "#",
+    /   class: "block py-1 px-4 text-center border border-zinc-600 rounded-full"
+
+    / = link_to "Easy", "#",
+    /   class: "block py-1 px-4 text-center border border-zinc-600 rounded-full"
+    = form_with model: [@deck, @card], method: :patch, data: { turbo_frame: "_top" } do |form|
+      = form.submit "Next", class: "block py-1 px-4 text-center border border-zinc-600 rounded-full"

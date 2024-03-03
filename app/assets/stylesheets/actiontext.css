@@ -5,7 +5,6 @@
  *
  *= require trix
 */
-@import "trix";
 
 /*
  * We need to override trix.css’s image gallery styles to accommodate the
@@ -29,4 +28,18 @@
 .trix-content action-text-attachment .attachment {
   padding: 0 !important;
   max-width: 100% !important;
+}
+
+/* Customized below */
+trix-toolbar .trix-button {
+  background: #3f3f46;
+  color: white;
+}
+
+trix-toolbar .trix-button.trix-active {
+  background: #71717a;
+}
+
+trix-toolbar .trix-button-group {
+  overflow: hidden;
 }

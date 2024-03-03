@@ -5,11 +5,9 @@ main.h-screen.flex.flex-col.justify-between
       h1.text-5xl.font-black.text-pretty
         | Hotwire Rails
 
-    .w-48.h-64.mx-auto.bg-zinc-800.rounded-xl.px-6.py-4.text-pretty
-      .flex.flex-col.justify-between.h-full
-        div
-          .mt-4 Generate a random number between 5 and 8
-
-        = button_tag "Flip over", class: "py-1 border border-zinc-600 rounded-full"
+    - if @card.nil?
+      | All done!
+    - else
+      = turbo_frame_tag :card, src: deck_card_path(@deck, @card)
 
   = render "footer"
