@@ -25,7 +25,7 @@ class CardsController < ApplicationController
   def update
     @card = @deck.cards.find(params[:id])
 
-    if @card.update(review_at: Time.current + 3.days)
+    if @card.update(review_at: Time.current + params.dig(:card, :review_in))
       redirect_to review_path(@deck)
     end
   end

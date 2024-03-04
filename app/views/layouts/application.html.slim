@@ -31,5 +31,5 @@ html lang="en"
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
 
     = javascript_importmap_tags
-  body.min-h-screen.bg-zinc-900.text-white
+  body.min-h-screen.bg-zinc-900.text-white.bg-cover(style="background-image: url(#{asset_url('background_ankh_pattern.png')});")
     = yield

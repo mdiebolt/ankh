@@ -1,19 +1,26 @@
 main.h-screen.flex.flex-col.justify-between
   .max-w-3xl.mx-auto
     .p-12
-      .text-sm.text-zinc-300 Add card to
+      .flex.items-center.space-x-2 class=eyebrow_classes
+        = link_to "Back", deck_path(@deck), class: "underline"
+        div >
+        div Add card to
       h1.text-5xl.font-black.text-pretty
         = @deck.name
 
-    .mx-auto.bg-zinc-800.rounded-xl.px-6.py-4.text-pretty
+    div
       = form_with model: [@deck, @card], class: "h-full flex flex-col justify-between" do |form|
-        div
-          = form.label :front
-          = form.rich_text_area :front
+        div class=card_container_classes
+          div
+            = form.label :front, class: "text-zinc-300"
+            .mt-2
+              = form.rich_text_area :front
 
-        .mt-4
-          = form.label :back
-          = form.rich_text_area :back
+          .mt-8
+            = form.label :back, class: "text-zinc-300"
+            .mt-2
+              = form.rich_text_area :back
 
         .mt-8
-          = form.submit "Create", class: "w-32 py-1 border border-zinc-600 rounded-full cursor-pointer hover:bg-zinc-600 active:bg-zinc-700"
+          = form.submit "Create",
+            class: button_classes("w-32 py-1")

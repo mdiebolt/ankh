@@ -32,18 +32,36 @@
 
 /* Customized below */
 trix-toolbar .trix-button {
-  background: #3f3f46;
+  background: none;
   color: white;
+  border: none;
 }
 
 trix-toolbar .trix-button.trix-active {
-  background: #71717a;
+  background: #3f3f46;
 }
 
 trix-toolbar .trix-button-group {
   overflow: hidden;
+  margin-bottom: 0;
 }
 
 .trix-content pre {
   background: none;
+}
+
+trix-toolbar .trix-button:not(:first-child) {
+  border-left: none;
+}
+
+trix-toolbar .trix-button-group, trix-editor {
+  border: none;
+}
+
+trix-editor {
+  background: #3f3f46;
+}
+
+.trix-button--icon-link {
+  display: none;
 }

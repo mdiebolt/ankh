@@ -1,4 +1,8 @@
 class DecksController < ApplicationController
+  def index
+    @decks = Deck.all
+  end
+
   def new
     @deck = Deck.new
   end
