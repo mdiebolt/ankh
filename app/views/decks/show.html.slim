@@ -15,10 +15,10 @@ main.h-screen.flex.flex-col.justify-between
         ul.space-y-8
           - @deck.cards.each do |card|
             li.flex.items-center.space-x-4
-              div class=card_container_classes("w-1/2 h-48")
+              div class=card_container_classes("w-1/2 h-48") style=card_container_box_shadows
                 .text-center.text-sm Front
                 .mt-2= card.front
-              div class=card_container_classes("w-1/2 h-48")
+              div class=card_container_classes("w-1/2 h-48") style=card_container_box_shadows
                 .text-center.text-sm Back
                 .mt-2= card.back
 

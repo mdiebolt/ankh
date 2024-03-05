@@ -33,3 +33,7 @@ hotwire.cards.create! \
 hotwire.cards.create! \
   front: "<div>Underline an element in yellow</div>",
   back: "<pre>decoration-yellow-500</pre>"
+
+hotwire.cards.create! \
+  front: "<div>Create a gradient from top-left to bottom-right</div>",
+  back: "<pre>bg-gradient-to-br from-zinc-700 to-zinc-800</pre>"

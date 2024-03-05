@@ -10,7 +10,7 @@ main.h-screen.flex.flex-col.justify-between
 
     div
       = form_with model: [@deck, @card], class: "h-full flex flex-col justify-between" do |form|
-        div class="mx-auto bg-zinc-800 rounded-xl px-6 py-4 text-pretty shadow-xl shadow-yellow-900/10"
+        div class="mx-auto bg-gradient-to-br from-zinc-700 to-zinc-800 border border-zinc-900 rounded-xl px-6 py-4 text-pretty shadow-xl shadow-yellow-900/10" style=card_container_box_shadows
           div
             = form.label :front, class: "text-zinc-300"
             .mt-2

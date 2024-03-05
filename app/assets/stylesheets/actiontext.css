@@ -34,11 +34,11 @@
 trix-toolbar .trix-button {
   background: none;
   color: white;
-  border: 1px solid #3f3f46;
+  border: 1px solid #71717a;
 }
 
 trix-toolbar .trix-button.trix-active {
-  background: #3f3f46;
+  background: #71717a;
 }
 
 trix-toolbar .trix-button-group {
@@ -50,15 +50,15 @@ trix-toolbar .trix-button-group {
 }
 
 trix-toolbar .trix-button:not(:first-child) {
-  border-left: 1px solid #3f3f46;
+  border-left: 1px solid #71717a;
 }
 
 trix-toolbar .trix-button-group, trix-editor {
-  border: 1px solid #3f3f46;
+  border: 1px solid #71717a;
 }
 
 trix-editor {
-  background: #3f3f46;
+  background: #71717a;
 }
 
 .trix-button--icon-link {

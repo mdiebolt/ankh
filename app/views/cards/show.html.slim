@@ -1,5 +1,5 @@
 = turbo_frame_tag :card do
-  div class=card_container_classes("mt-2 w-48")
+  div class=card_container_classes("mt-2 w-48") style=card_container_box_shadows
     = @card.front
 
   = link_to "Flip over", deck_back_path(@deck, @card),
