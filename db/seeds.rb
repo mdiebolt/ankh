@@ -29,3 +29,7 @@ hotwire.cards.create! \
 hotwire.cards.create! \
   front: "<div>Create an element that blurs the text behind it</div>",
   back: "<div>You need the Tailwind CSS backdrop blur class and a semi-transparent background color.</div><pre>.backdrop-blur.bg-zinc-600/50\n  p I blur things</pre>"
+
+hotwire.cards.create! \
+  front: "<div>Underline an element in yellow</div>",
+  back: "<pre>decoration-yellow-500</pre>"

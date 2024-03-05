@@ -3,13 +3,22 @@ main.h-screen.flex.flex-col.justify-between
     .py-12
       h1.text-5xl.font-black.text-center Decks
 
-    div class=card_container_classes
-      ul.flex.flex-col.space-y-1
+    table
+      thead
+        tr
+          th.py-1.text-left Name
+          th.py-1.pl-4.text-right Cards
+          th.py-1.pl-4.text-right Updated
+
+      tbody
         - @decks.each do |deck|
-          li
-            = link_to "#{deck.name} (#{deck.cards.size})", deck, class: link_classes
+          tr
+            td.py-1.text-left
+              = link_to deck.name, deck, class: link_classes
+            td.py-1.pl-4.text-right= deck.cards.size
+            td.py-1.pl-4.text-right.text-zinc-300= time_ago_in_words(deck.updated_at)
 
     .mt-4
       = link_to 'New Deck', new_deck_path, class: link_classes
 
-  = render "footer"
+  = render "navigation"
