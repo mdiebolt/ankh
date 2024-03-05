@@ -1,14 +1,19 @@
 main.h-screen.flex.flex-col.justify-between
   .mx-auto.max-w-xl
     .py-12
-      h1.text-5xl.font-black.text-center Decks
+      h1.text-5xl.font-black.text-center.pt-5 Decks
 
-    table
+    = link_to new_deck_path do
+      .flex.items-center.space-x-1
+        div +
+        div class=link_classes New
+
+    table.mt-4
       thead
         tr
-          th.py-1.text-left Name
-          th.py-1.pl-4.text-right Cards
-          th.py-1.pl-4.text-right Updated
+          th.py-1.text-left.text-zinc-300 Name
+          th.py-1.pl-4.text-right.text-zinc-300 Cards
+          th.py-1.pl-4.text-right.text-zinc-300 Updated
 
       tbody
         - @decks.each do |deck|
@@ -16,9 +21,7 @@ main.h-screen.flex.flex-col.justify-between
             td.py-1.text-left
               = link_to deck.name, deck, class: link_classes
             td.py-1.pl-4.text-right= deck.cards.size
-            td.py-1.pl-4.text-right.text-zinc-300= time_ago_in_words(deck.updated_at)
-
-    .mt-4
-      = link_to 'New Deck', new_deck_path, class: link_classes
+            td.py-1.pl-4.text-right.text-zinc-300
+              = "#{time_ago_in_words(deck.updated_at)} ago"
 
   = render "navigation"

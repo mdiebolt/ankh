@@ -1,7 +1,11 @@
 main.h-screen.flex.flex-col.justify-between
   .max-w-2xl.mx-auto
     .p-12
-      div class=eyebrow_classes Reviewing
+      .flex.items-center.space-x-2 class=eyebrow_classes
+        = link_to "Back", reviews_path, class: link_classes
+        div ☥
+        div class=eyebrow_classes Reviewing
+
       h1.text-5xl.font-black.text-pretty
         | Hotwire Rails
 

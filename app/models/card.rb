@@ -1,5 +1,5 @@
 class Card < ApplicationRecord
-  belongs_to :deck
+  belongs_to :deck, touch: true
 
   has_rich_text :front
   has_rich_text :back
