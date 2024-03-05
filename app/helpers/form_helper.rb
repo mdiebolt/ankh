@@ -1,6 +1,10 @@
 module FormHelper
   def eyebrow_classes
-    "text-sm text-yellow-600"
+    "text-sm text-zinc-300"
+  end
+
+  def link_classes
+    "underline text-yellow-600"
   end
 
   def button_classes(additional_classes = "")

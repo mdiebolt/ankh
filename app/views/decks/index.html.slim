@@ -7,9 +7,9 @@ main.h-screen.flex.flex-col.justify-between
       ul.flex.flex-col.space-y-1
         - @decks.each do |deck|
           li
-            = link_to "#{deck.name} (#{deck.cards.size})", deck, class: "underline"
+            = link_to "#{deck.name} (#{deck.cards.size})", deck, class: link_classes
 
     .mt-4
-      = link_to 'New Deck', new_deck_path, class: "underline"
+      = link_to 'New Deck', new_deck_path, class: link_classes
 
   = render "footer"

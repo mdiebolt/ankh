@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def index
-    @decks = Deck.all
+    @decks = Deck.up_for_review
   end
 
   def show

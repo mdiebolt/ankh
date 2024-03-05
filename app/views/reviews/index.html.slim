@@ -3,10 +3,13 @@ main.h-screen.flex.flex-col.justify-between
     .py-12
       h1.text-5xl.font-black.text-center Review
 
-    div class=card_container_classes
+    p.mt-4.text-zinc-300 These decks have cards up for review.
+
+    .mt-4 class=card_container_classes
       ul.flex.flex-col.space-y-1
         - @decks.each do |deck|
           li
-            = link_to "#{deck.name} (#{deck.cards.size})", review_path(deck.id), class: "underline"
+            = link_to "#{deck.name} (#{deck.cards.size})", review_path(deck.id),
+              class: link_classes
 
   = render "footer"
