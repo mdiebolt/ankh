@@ -1,23 +1,9 @@
 = turbo_frame_tag :card do
   div class=card_container_classes("mt-2 w-48")
-    .flex.flex-col.justify-between.h-full
-      div
-        .mt-4
-          = @card.back
+    = @card.back
 
   .flex.justify-center.mt-4.space-x-2
-    = form_with model: [@deck, @card], method: :patch, data: { turbo_frame: "_top" } do |form|
-      = form.hidden_field :review_in, value: 1.minute
-      = form.submit "Again", class: button_classes("py-0.5 px-3")
-
-    = form_with model: [@deck, @card], method: :patch, data: { turbo_frame: "_top" } do |form|
-      = form.hidden_field :review_in, value: 6.minutes
-      = form.submit "Hard", class: button_classes("py-0.5 px-3")
-
-    = form_with model: [@deck, @card], method: :patch, data: { turbo_frame: "_top" } do |form|
-      = form.hidden_field :review_in, value: 10.minutes
-      = form.submit "Good", class: button_classes("py-0.5 px-3")
-
-    = form_with model: [@deck, @card], method: :patch, data: { turbo_frame: "_top" } do |form|
-      = form.hidden_field :review_in, value: 3.days
-      = form.submit "Easy", class: button_classes("py-0.5 px-3")
+    - @review_confidence.each do |(feeling, time_from_now)|
+      = form_with model: [@deck, @card], method: :patch, data: { turbo_frame: "_top" } do |form|
+        = form.hidden_field :review_in, value: time_from_now
+        = form.submit feeling.capitalize, class: button_classes("py-0.5 px-3")

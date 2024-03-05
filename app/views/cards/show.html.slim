@@ -1,9 +1,6 @@
 = turbo_frame_tag :card do
   div class=card_container_classes("mt-2 w-48")
-    .flex.flex-col.justify-between.h-full
-      div
-        .mt-4
-          = @card.front
+    = @card.front
 
   = link_to "Flip over", deck_back_path(@deck, @card),
     class: button_classes("w-24 mt-4 px-3 py-0.5 mx-auto block")

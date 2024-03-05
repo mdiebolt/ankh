@@ -3,6 +3,12 @@ class BacksController < ApplicationController
 
   def show
     @card = @deck.cards.find(params[:id])
+    @review_confidence = {
+      again: 1.minute,
+      hard:  6.minutes,
+      good:  10.minutes,
+      easy:  3.days
+    }
   end
 
   private
