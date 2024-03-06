@@ -8,6 +8,6 @@
 
 .flex.justify-center.mt-8.space-x-2
   - review_confidence.each do |(feeling, duration)|
-    = form_with model: [deck, card], method: :patch, data: { turbo_frame: "_top" } do |form|
+    = form_with model: [deck, card] do |form|
       = form.hidden_field :seconds, value: duration
       = form.submit feeling.capitalize, class: button_classes("py-0.5 px-3")
