@@ -7,4 +7,8 @@ class Card < ApplicationRecord
   scope :reviewable, -> { where("review_at < ?", Time.current).order(:review_at) }
 
   attribute :review_at, :datetime, default: -> { Time.current }
+
+  def review_after(duration)
+    update(review_at: duration.seconds.from_now)
+  end
 end

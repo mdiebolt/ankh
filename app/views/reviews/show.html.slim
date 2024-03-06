@@ -12,6 +12,9 @@ main.h-screen.flex.flex-col.justify-between
     - if @card.nil?
       .text-2xl.text-center All done! 🎉
     - else
-      = turbo_frame_tag :card, src: deck_card_path(@deck, @card)
+      = render "cards/card",
+        deck: @deck,
+        card: @card,
+        review_confidence: @review_confidence
 
   = render "navigation"

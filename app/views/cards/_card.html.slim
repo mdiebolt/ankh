@@ -1,0 +1,13 @@
+.card.w-72.h-96.group.mx-auto class="[perspective:900px]"
+  .content.h-full class="[transform-style:preserve-3d] transition-transform duration-1000 group-hover:[transform:rotateY(180deg)] group-hover:transition-transform group-hover:duration-500"
+    .absolute class=card_container_classes("grid place-items-center [backface-visibility:hidden]") style=card_container_box_shadows
+      = card.front
+
+    .absolute class=card_container_classes("grid place-items-center [backface-visibility:hidden] [transform:rotateY(180deg)]") style=card_container_box_shadows
+      = card.back
+
+.flex.justify-center.mt-8.space-x-2
+  - review_confidence.each do |(feeling, duration)|
+    = form_with model: [deck, card], method: :patch, data: { turbo_frame: "_top" } do |form|
+      = form.hidden_field :seconds, value: duration
+      = form.submit feeling.capitalize, class: button_classes("py-0.5 px-3")

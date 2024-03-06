@@ -1,9 +1,0 @@
-= turbo_frame_tag :card do
-  div class=card_container_classes("mt-2 w-48") style=card_container_box_shadows
-    = @card.back
-
-  .flex.justify-center.mt-4.space-x-2
-    - @review_confidence.each do |(feeling, time_from_now)|
-      = form_with model: [@deck, @card], method: :patch, data: { turbo_frame: "_top" } do |form|
-        = form.hidden_field :review_in, value: time_from_now
-        = form.submit feeling.capitalize, class: button_classes("py-0.5 px-3")

@@ -8,24 +8,18 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     @card.deck = @deck
-    @card.review_at = Time.current
 
     if @card.save
       redirect_to deck_path(@deck)
     else
-      @card = Card.new
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
-    @card = @deck.cards.find(params[:id])
   end
 
   def update
     @card = @deck.cards.find(params[:id])
 
-    if @card.update(review_at: Time.current + params.dig(:card, :review_in))
+    if @card.review_after(params.dig(:card, :seconds).to_i)
       redirect_to review_path(@deck)
     end
   end
