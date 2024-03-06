@@ -1,26 +1,24 @@
-main.h-screen.flex.flex-col.justify-between
-  .max-w-2xl.mx-auto
-    .p-12
-      .flex.items-center.space-x-2 class=eyebrow_classes
-        = link_to "Back", decks_path, class: link_classes
-        div ☥
-        div class=eyebrow_classes Deck
-      h1.text-5xl.font-black.text-pretty
-        = @deck.name
+main.h-screen
+  .p-12.max-w-2xl.mx-auto
+    .flex.items-center.space-x-2 class=eyebrow_classes
+      = link_to "Back", decks_path, class: link_classes
+      div ☥
+      div class=eyebrow_classes Deck
+    h1.text-5xl.font-black.text-pretty
+      = @deck.name
 
-      .mt-8
-        = link_to "Add Card", new_deck_card_path(@deck), class: "mt-4 #{link_classes}"
+    .mt-8
+      = link_to "Add Card", new_deck_card_path(@deck), class: link_classes
 
-      .mt-12
-        ul.space-y-8
-          - @deck.cards.each do |card|
-            li.flex.items-center.space-x-4
-              div class=card_container_classes("w-1/2 h-48") style=card_container_box_shadows
-                .text-center.text-sm Front
-                .mt-2= card.front
-              div class=card_container_classes("w-1/2 h-48") style=card_container_box_shadows
-                .text-center.text-sm Back
-                .mt-2= card.back
+  ul.py-8.space-x-8.flex.overscroll-none.overflow-x-auto.max-w-4xl.mx-auto
+    - @deck.cards.each do |card|
+      li
+        div class=card_container_classes style=card_container_box_shadows
+          .flex.flex-col.justify-center.space-y-12.h-full
+            div
+              .text-sm.text-zinc-300 Front
+              .mt-1= card.front
 
-
-  = render "navigation"
+            div
+              .text-sm.text-zinc-300 Back
+              .mt-1= card.back

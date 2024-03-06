@@ -5,11 +5,15 @@ main.h-screen.flex.flex-col.justify-between
 
     p.mt-4.text-zinc-300 These decks have cards up for review.
 
-    .mt-4 class=card_container_classes style=card_container_box_shadows
-      ul.flex.flex-col.space-y-1
-        - @decks.each do |deck|
-          li
-            = link_to "#{deck.name} (#{deck.cards.size})", review_path(deck.id),
-              class: link_classes
+    table.mt-4.w-full
+      thead
+        tr
+          th.py-1.text-left.text-zinc-300 Name
+          th.py-1.pl-4.text-right.text-zinc-300 Cards to review
 
-  = render "navigation"
+      tbody
+        - @decks.each do |deck|
+          tr
+            td.py-1.text-left
+              = link_to deck.name, deck, class: link_classes
+            td.py-1.pl-4.text-right= deck.cards.reviewable.size

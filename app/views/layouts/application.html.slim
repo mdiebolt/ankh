@@ -1,5 +1,5 @@
 doctype html
-html lang="en"
+html.overscroll-x-none lang="en"
   head
     title
       = content_for(:title) || "Ankh. A beaufiful way to practice Anki flashcards."
@@ -31,5 +31,6 @@ html lang="en"
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
 
     = javascript_importmap_tags
-  body.min-h-screen.bg-zinc-900.text-white.bg-cover(style="background-image: url(#{asset_url('background_ankh_pattern.png')});")
+  body.min-h-screen.bg-zinc-900.text-white.bg-cover.overscroll-x-none(style="background-image: url(#{asset_url('background_ankh_pattern.png')});")
     = yield
+    = render "navigation"

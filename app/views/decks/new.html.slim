@@ -7,23 +7,19 @@ main.h-screen.flex.flex-col.justify-between
       h1.text-5xl.font-black.text-pretty
         | New Deck
 
-      p.mt-2 Create a new deck of flashcards
+      p.mt-2.text-zinc-300 Create a deck of flashcards
 
-    div class=card_container_classes("h-64") style=card_container_box_shadows
-      = form_with model: @deck, class: "h-full flex flex-col justify-between" do |form|
+    = form_with model: @deck, class: "h-full flex flex-col" do |form|
+      div class=card_container_classes style=card_container_box_shadows
         div
-          .mt-4
-            div
-              = form.label :name,
-                class: "text-zinc-300"
-            div
-              = form.text_field :name,
-                class: "mt-2 rounded-lg w-full bg-zinc-600 border border-zinc-600 focus:border-yellow-600 focus:ring-yellow-600/50",
-                autocomplete: "off",
-                placeholder: "500 Spanish verbs"
-
+          = form.label :name,
+            class: "text-zinc-300"
         div
-          = form.submit "Create",
-            class: button_classes("w-32 py-1")
+          = form.text_field :name,
+            class: "mt-1 rounded-lg w-full bg-zinc-600 border border-zinc-600 focus:border-yellow-600 focus:ring-yellow-600/50",
+            autocomplete: "off",
+            placeholder: "500 Spanish verbs"
 
-  = render "navigation"
+      .mx-auto.mt-8
+        = form.submit "Create",
+          class: button_classes("px-4 py-1")

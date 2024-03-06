@@ -45,3 +45,7 @@ hotwire.cards.create! \
 hotwire.cards.create! \
   front: "<div>How many rems is <code>w-12</code>?</div>",
   back: "<div><code>3rem</code></div>"
+
+hotwire.cards.create! \
+  front: "<div>How to prevent back navigation on left swipe?</div>",
+  back: "<div><pre>html.overscroll-x-none\nbody.overscroll-x-none</pre></div>"
