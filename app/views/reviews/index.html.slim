@@ -15,5 +15,5 @@ main.h-screen.flex.flex-col.justify-between
         - @decks.each do |deck|
           tr
             td.py-1.text-left
-              = link_to deck.name, deck, class: link_classes
+              = link_to deck.name, review_path(deck), class: link_classes
             td.py-1.pl-4.text-right= deck.cards.reviewable.size
