@@ -9,6 +9,7 @@ gem "propshaft"
 gem "sqlite3", "~> 1.4"
 
 gem "puma"
+gem "thruster"
 
 gem "importmap-rails"
 gem "turbo-rails"
