@@ -48,4 +48,4 @@ hotwire.cards.create! \
 
 hotwire.cards.create! \
   front: "<div>How to prevent back navigation on left swipe?</div>",
-  back: "<div><pre>html.overscroll-x-none\nbody.overscroll-x-none</pre></div>"
+  back: "<div><pre>html.overscroll-x-none\n  body.overscroll-x-none</pre></div>"

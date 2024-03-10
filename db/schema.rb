@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_03_03_161418) do
+ActiveRecord::Schema[7.2].define(version: 2024_03_16_152944) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -53,7 +53,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_03_03_161418) do
     t.integer "deck_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "review_at"
+    t.datetime "review_at", null: false
+    t.datetime "reviewed_at", null: false
+    t.integer "elapsed_days", default: 0, null: false
+    t.integer "scheduled_days", default: 0, null: false
+    t.float "stability", default: 0.0, null: false
+    t.float "difficulty", default: 0.0, null: false
+    t.string "stage", default: "new", null: false
     t.index ["deck_id"], name: "index_cards_on_deck_id"
   end
 

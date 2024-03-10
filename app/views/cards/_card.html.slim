@@ -1,4 +1,4 @@
-.card.w-72.h-96.group.mx-auto class="[perspective:900px]"
+.card.h-56.group.mx-auto class="[perspective:900px]"
   .content.h-full class="[transform-style:preserve-3d] transition-transform duration-1000 group-hover:[transform:rotateY(180deg)] group-hover:transition-transform group-hover:duration-500"
     .absolute class=card_container_classes("grid place-items-center [backface-visibility:hidden]") style=card_container_box_shadows
       = card.front
@@ -6,8 +6,21 @@
     .absolute class=card_container_classes("grid place-items-center [backface-visibility:hidden] [transform:rotateY(180deg)]") style=card_container_box_shadows
       = card.back
 
+/ pre.absolute.top-0.left-0= card
+
 .flex.justify-center.mt-8.space-x-2
-  - review_confidence.each do |(feeling, duration)|
-    = form_with model: [deck, card] do |form|
-      = form.hidden_field :seconds, value: duration
-      = form.submit feeling.capitalize, class: button_classes("py-0.5 px-3")
+  = form_with model: [deck, card] do |form|
+    = form.hidden_field :rating, value: again_rating
+    = form.submit "Again", class: button_classes("py-0.5 px-3")
+
+  = form_with model: [deck, card] do |form|
+    = form.hidden_field :rating, value: hard_rating
+    = form.submit "Hard", class: button_classes("py-0.5 px-3")
+
+  = form_with model: [deck, card] do |form|
+    = form.hidden_field :rating, value: good_rating
+    = form.submit "Good", class: button_classes("py-0.5 px-3")
+
+  = form_with model: [deck, card] do |form|
+    = form.hidden_field :rating, value: easy_rating
+    = form.submit "Easy", class: button_classes("py-0.5 px-3")

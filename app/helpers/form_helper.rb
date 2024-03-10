@@ -12,7 +12,7 @@ module FormHelper
   end
 
   def card_container_classes(additional_classes = "")
-    "#{additional_classes} w-72 h-96 mx-auto bg-gradient-to-br from-zinc-700 to-zinc-800 border border-zinc-900 rounded-xl px-6 py-4 text-pretty shadow-xl shadow-yellow-900/10"
+    "#{additional_classes} size-full mx-auto bg-gradient-to-br from-zinc-700 to-zinc-800 border border-zinc-900 rounded-xl px-6 py-4 text-pretty shadow-xl shadow-yellow-900/10"
   end
 
   def card_container_box_shadows

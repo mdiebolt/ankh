@@ -19,7 +19,7 @@ class CardsController < ApplicationController
   def update
     @card = @deck.cards.find(params[:id])
 
-    if @card.review_after(params.dig(:card, :seconds).to_i)
+    if @card.review_based_on(params.dig(:card, :rating).to_i)
       redirect_to review_path(@deck)
     end
   end
