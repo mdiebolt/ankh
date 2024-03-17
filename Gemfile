@@ -41,4 +41,4 @@ group :test do
 end
 
 # Use Redis for Action Cable
-gem "redis", "~> 4.0"
+gem "redis", "~> 5.1"
