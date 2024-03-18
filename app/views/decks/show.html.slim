@@ -10,7 +10,7 @@ main.h-screen
     .mt-8
       = link_to "Add Card", new_deck_card_path(@deck), class: link_classes
 
-  ul.py-8.space-x-8.flex.overscroll-none.overflow-x-auto.max-w-4xl.mx-auto
+  ul.p-8.space-x-8.flex.overscroll-none.overflow-x-auto.mx-auto
     - @deck.cards.each do |card|
       li.min-w-96
         div class=card_container_classes style=card_container_box_shadows
